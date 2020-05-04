@@ -10,4 +10,4 @@ the main idea is to loop through the input array start from the last element set
 ## Solution
 
 ![code challenge1](/assets/codechallenge1.jpg)
-![code challenge1](/assets/code challenge1-2.jpg)
+![code challenge1](/assets/codechallenge1-2.jpg)
