@@ -2,29 +2,32 @@
 
 namespace Challenges
 {
-    class Program
+    public class Program
     {
+
+
         public static void Main(string[] args)
         {
-            ArrayReverse();
-            
+           
 
         }
         
-       public static void ArrayReverse()
+
+        //function that reverse the element of the array
+       public static int[] ArrayReverse(int []initialArray)
         {
             int[] newArray = new int[6];
-            int[] inputArray = { 1, 2, 3, 5, 6, 9 };
-
-            int j = 0;
-                for (int i=inputArray.Length-1; i>=0;i--)
-                {
-                    newArray[i]= inputArray[j];
-                j++;
-                }
+            int[] reverseArray = new int [initialArray.Length] ;
 
             
-            Console.WriteLine(string.Join(",", newArray));
+                for (int i=0; i<initialArray.Length;i++)
+                {
+                    reverseArray.SetValue(initialArray[initialArray.Length-1-i],i);
+                
+                }
+
+
+            return reverseArray;
         }
     }
 }
