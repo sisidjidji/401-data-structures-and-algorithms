@@ -19,5 +19,5 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## Solution
 
-![code challenge2](/assets/challenge2.jpg)
+![code challenge2](/assets/challenge2.png)
 
