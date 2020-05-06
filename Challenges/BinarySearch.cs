@@ -12,11 +12,14 @@ namespace Challenges
         {
             int  maxPosition = array.Length-1;
             int  minPosition = 0;
-            int midPosition = (minPosition + maxPosition) + 1 / 2;
+            
 
 
             while (minPosition <= maxPosition)
             {
+
+                int midPosition = (minPosition + maxPosition) + 1 / 2;
+
                 if (array[midPosition]== num)
                 {
                     return midPosition;
