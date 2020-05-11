@@ -9,16 +9,13 @@
         {
             Node newNode = new Node(numb);
 
-
+            // Point newNode to rest of the old list
             if (head != null)
             {
-                newNode.Value = numb;
                 newNode.Next = head;
             }
-            else
-            {
-                head = newNode;
-            }
+
+            head = newNode;
         }
 
         public bool Include(int val)
@@ -51,8 +48,9 @@
                 result += $"{{{current.Value}}} -> ";
 
                 // Traverse
-                current = head.Next;
+                current = current.Next;
             }
+
             return result + "NULL";
         }
     }

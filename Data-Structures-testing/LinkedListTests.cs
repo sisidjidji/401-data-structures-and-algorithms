@@ -19,7 +19,7 @@ namespace Data_Structures_testing
         }
 
         [Fact]
-        public void Can_Insert()
+        public void Can_Insert_into_empty_list()
         {
             // Arrange
             LinkedList ll = new LinkedList();
@@ -29,6 +29,20 @@ namespace Data_Structures_testing
 
             // Assert
             Assert.Equal("{5} -> NULL", ll.toString());
+        }
+
+        [Fact]
+        public void Can_Insert_into_nonempty_list()
+        {
+            // Arrange
+            LinkedList ll = new LinkedList();
+            ll.Insert(10);
+
+            // Act
+            ll.Insert(5);
+
+            // Assert
+            Assert.Equal("{5} -> {10} -> NULL", ll.toString());
         }
     }
 }
