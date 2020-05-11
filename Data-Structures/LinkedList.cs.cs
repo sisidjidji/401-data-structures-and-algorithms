@@ -1,21 +1,16 @@
-﻿using System;
-using System.Dynamic;
-using System.Net.Http.Headers;
-using System.Transactions;
-
-namespace Data_Structures
+﻿namespace Data_Structures
 {
-    public class Linkeslist
+    public class LinkedList
     {
 
         private Node head;
-        
+
         public void Insert(int numb)
         {
             Node newNode = new Node(numb);
-           
 
-            if (head !=null)
+
+            if (head != null)
             {
                 newNode.Value = numb;
                 newNode.Next = head;
@@ -23,7 +18,7 @@ namespace Data_Structures
             }
             else
             {
-              
+
             }
         }
 
@@ -47,17 +42,17 @@ namespace Data_Structures
             return false;
         }
 
-        public string toString ()
+        public string toString()
         {
-            Node newNode = head ;
+            Node newNode = head;
 
-            string result = "";
+            string result = "NULL";
             while (head != null)
             {
-                 result += $"{{{newNode.Value}}}->";
+                result += $"{{{newNode.Value}}}->";
                 newNode.Next = head;
 
-                if(newNode.Next !=null)
+                if (newNode.Next != null)
                 {
                     result += $"{{{ newNode.Value}}}";
                 }
@@ -66,20 +61,20 @@ namespace Data_Structures
             return result;
         }
     }
-        public class Node
+    public class Node
+    {
+        public Node(int value)
         {
-            public Node(int value)
-            {
-                Value = value;
-                Next = null;
-               
-               
-            }
+            Value = value;
+            Next = null;
 
-            public int Value { get; set; }
-            public Node Next { get; set; }
-           
+
         }
 
-    
+        public int Value { get; set; }
+        public Node Next { get; set; }
+
+    }
+
+
 }
