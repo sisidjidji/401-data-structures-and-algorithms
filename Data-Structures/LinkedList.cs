@@ -20,18 +20,18 @@
 
         public bool Include(int val)
         {
-            Node newNode = new Node(val);
+            Node current = head;
 
-            while (head != null)
+            while (current.Next != null)
             {
-                if (newNode.Value != val)
+                if (current.Value == val)
                 {
                     return true;
 
                 }
                 else
                 {
-                    newNode.Next = head;
+                    current = current.Next;
                 }
 
             }
