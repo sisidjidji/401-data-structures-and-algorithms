@@ -1,30 +1,21 @@
-﻿using System;
-using System.Dynamic;
-using System.Net.Http.Headers;
-using System.Transactions;
-
-namespace Data_Structures
+﻿namespace Data_Structures
 {
-    public class Linkeslist
+    public class LinkedList
     {
 
         private Node head;
-        
+
         public void Insert(int numb)
         {
             Node newNode = new Node(numb);
-           
 
-            if (head !=null)
+            // Point newNode to rest of the old list
+            if (head != null)
             {
-                newNode.Value = numb;
                 newNode.Next = head;
+            }
 
-            }
-            else
-            {
-              
-            }
+            head = newNode;
         }
 
         public bool Include(int val)
@@ -47,39 +38,36 @@ namespace Data_Structures
             return false;
         }
 
-        public string toString ()
+        public string toString()
         {
-            Node newNode = head ;
+            Node current = head;
 
             string result = "";
-            while (head != null)
+            while (current != null)
             {
-                 result += $"{{{newNode.Value}}}->";
-                newNode.Next = head;
+                result += $"{{{current.Value}}} -> ";
 
-                if(newNode.Next !=null)
-                {
-                    result += $"{{{ newNode.Value}}}";
-                }
-
+                // Traverse
+                current = current.Next;
             }
-            return result;
+
+            return result + "NULL";
         }
     }
-        public class Node
+    public class Node
+    {
+        public Node(int value)
         {
-            public Node(int value)
-            {
-                Value = value;
-                Next = null;
-               
-               
-            }
+            Value = value;
+            Next = null;
 
-            public int Value { get; set; }
-            public Node Next { get; set; }
-           
+
         }
 
-    
+        public int Value { get; set; }
+        public Node Next { get; set; }
+
+    }
+
+
 }
