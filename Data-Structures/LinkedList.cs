@@ -1,36 +1,28 @@
-﻿using System;
-using System.Dynamic;
-using System.Net.Http.Headers;
-using System.Transactions;
-
-namespace Data_Structures
+﻿namespace Data_Structures
 {
-    public class LinkesList
+    public class LinkedList
     {
 
-        public Node head;
-        
+        private Node head;
+
         public void Insert(int numb)
         {
             Node newNode = new Node(numb);
 
+            // Point newNode to rest of the old list
             if (head != null)
             {
-                newNode.Value = numb;
                 newNode.Next = head;
-
             }
-            
 
-                head=newNode;
-               
+            head = newNode;
         }
 
         public bool Include(int val)
         {
-            Node current = new Node(val);
+            Node current = head;
 
-            while (head != null)
+            while (current.Next != null)
             {
                 if (current.Value == val)
                 {
@@ -39,40 +31,43 @@ namespace Data_Structures
                 }
                 else
                 {
-                    current.Next = head;
+                    current = current.Next;
                 }
 
             }
             return false;
         }
 
-        public override string ToString ()
+        public string toString()
         {
-            Node newNode = head ;
+            Node current = head;
 
             string result = "";
-            while (head != null)
+            while (current != null)
             {
-                result += $"{{{newNode.Value}}}->";
-                newNode = newNode.Next;
+                result += $"{{{current.Value}}} -> ";
+
+                // Traverse
+                current = current.Next;
             }
-            return result+"NULL";
+
+            return result + "NULL";
         }
     }
-        public class Node
+    public class Node
+    {
+        public Node(int value)
         {
-            public Node(int value)
-            {
-                Value = value;
-                Next = null;
-               
-               
-            }
+            Value = value;
+            Next = null;
 
-            public int Value { get; set; }
-            public Node Next { get; set; }
-           
+
         }
 
-    
+        public int Value { get; set; }
+        public Node Next { get; set; }
+
+    }
+
+
 }
