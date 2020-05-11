@@ -5,65 +5,58 @@ using System.Transactions;
 
 namespace Data_Structures
 {
-    public class Linkeslist
+    public class LinkesList
     {
 
-        private Node head;
+        public Node head;
         
         public void Insert(int numb)
         {
             Node newNode = new Node(numb);
-           
 
-            if (head !=null)
+            if (head != null)
             {
                 newNode.Value = numb;
                 newNode.Next = head;
 
             }
-            else
-            {
-              
-            }
+            
+
+                head=newNode;
+               
         }
 
         public bool Include(int val)
         {
-            Node newNode = new Node(val);
+            Node current = new Node(val);
 
             while (head != null)
             {
-                if (newNode.Value != val)
+                if (current.Value == val)
                 {
                     return true;
 
                 }
                 else
                 {
-                    newNode.Next = head;
+                    current.Next = head;
                 }
 
             }
             return false;
         }
 
-        public string toString ()
+        public override string ToString ()
         {
             Node newNode = head ;
 
             string result = "";
             while (head != null)
             {
-                 result += $"{{{newNode.Value}}}->";
-                newNode.Next = head;
-
-                if(newNode.Next !=null)
-                {
-                    result += $"{{{ newNode.Value}}}";
-                }
-
+                result += $"{{{newNode.Value}}}->";
+                newNode = newNode.Next;
             }
-            return result;
+            return result+"NULL";
         }
     }
         public class Node
