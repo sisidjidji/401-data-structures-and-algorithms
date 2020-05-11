@@ -17,5 +17,18 @@ namespace Data_Structures_testing
             // Assert
             Assert.Equal("NULL", result);
         }
+
+        [Fact]
+        public void Can_Insert()
+        {
+            // Arrange
+            LinkedList ll = new LinkedList();
+
+            // Act
+            ll.Insert(5);
+
+            // Assert
+            Assert.Equal("{5} -> NULL", ll.toString());
+        }
     }
 }

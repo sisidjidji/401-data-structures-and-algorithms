@@ -14,11 +14,10 @@
             {
                 newNode.Value = numb;
                 newNode.Next = head;
-
             }
             else
             {
-
+                head = newNode;
             }
         }
 
@@ -44,21 +43,17 @@
 
         public string toString()
         {
-            Node newNode = head;
+            Node current = head;
 
-            string result = "NULL";
-            while (head != null)
+            string result = "";
+            while (current != null)
             {
-                result += $"{{{newNode.Value}}}->";
-                newNode.Next = head;
+                result += $"{{{current.Value}}} -> ";
 
-                if (newNode.Next != null)
-                {
-                    result += $"{{{ newNode.Value}}}";
-                }
-
+                // Traverse
+                current = head.Next;
             }
-            return result;
+            return result + "NULL";
         }
     }
     public class Node
