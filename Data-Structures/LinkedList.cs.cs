@@ -12,38 +12,59 @@ namespace Data_Structures
         
         public void Insert(int numb)
         {
-            Node inserNode = new Node(numb);
+            Node newNode = new Node(numb);
            
 
-            if (head == null)
+            if (head !=null)
             {
-                inserNode.Current = head;
+                newNode.Value = numb;
+                newNode.Next = head;
 
             }
             else
             {
-                inserNode.Value= numb;
-                inserNode.Next =head;
+              
             }
         }
 
-        public Boolean Include(int val)
+        public bool Include(int val)
         {
             Node newNode = new Node(val);
 
-            while ((head != null)&&(newNode.Value!=val))  
+            while (head != null)
             {
-                newNode.Next = head;
-                
+                if (newNode.Value != val)
+                {
+                    return true;
+
+                }
+                else
+                {
+                    newNode.Next = head;
+                }
+
             }
-
-
-            
-
-
-
+            return false;
         }
 
+        public string toString ()
+        {
+            Node newNode = head ;
+
+            string result = "";
+            while (head != null)
+            {
+                 result += $"{{{newNode.Value}}}->";
+                newNode.Next = head;
+
+                if(newNode.Next !=null)
+                {
+                    result += $"{{{ newNode.Value}}}";
+                }
+
+            }
+            return result;
+        }
     }
         public class Node
         {
@@ -57,7 +78,7 @@ namespace Data_Structures
 
             public int Value { get; set; }
             public Node Next { get; set; }
-            public Node Current { get; set; }
+           
         }
 
     
