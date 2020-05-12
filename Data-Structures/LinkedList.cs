@@ -1,4 +1,6 @@
-﻿namespace Data_Structures
+﻿using System.Runtime.InteropServices;
+
+namespace Data_Structures
 {
     public class LinkedList
     {
@@ -53,21 +55,45 @@
 
             return result + "NULL";
         }
-    }
-    public class Node
-    {
-        public Node(int value)
-        {
-            Value = value;
-            Next = null;
 
+        public void Append(int value)
+        {
+            Node newNode = new Node(value);
+
+            if (head == null)
+            {
+                head = newNode;
+            }
+
+            else
+            {
+                newNode.Next = null;
+
+                Node current = head;
+
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                current.Next = newNode;
+
+            }
+
+        }
+        public class Node
+        {
+            public Node(int value)
+            {
+                Value = value;
+                Next = null;
+
+
+            }
+
+            public int Value { get; set; }
+            public Node Next { get; set; }
 
         }
 
-        public int Value { get; set; }
-        public Node Next { get; set; }
-
     }
-
-
 }
