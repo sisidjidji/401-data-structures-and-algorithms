@@ -130,6 +130,10 @@ namespace Data_Structures
         {
 
             int length = 0;
+            if (k < 0)
+            {
+                throw new IndexOutOfRangeException(" error");
+            }
 
             if (head == null)
             {
