@@ -155,5 +155,38 @@ namespace Data_Structures_testing
 
         }
 
+        [Fact]
+        public void can_insert_after_middel()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            list.InsertAfter(2, 3);
+
+            Assert.Equal("{5} -> {4} -> {2} -> {3}-> {1} -> NULL", list.toString());
+
+        }
+
+        [Fact]
+        public void can_insert_after_first()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            list.InsertAfter(2, 3);
+
+            Assert.Equal("{5} -> {3} -> {4} -> {2} -> {1} -> NULL", list.toString());
+
+        }
     }
     }
