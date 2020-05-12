@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 
 namespace Data_Structures
 {
@@ -64,7 +66,7 @@ namespace Data_Structures
             {
                 head = newNode;
             }
-
+           
             else
             {
                 newNode.Next = null;
@@ -82,67 +84,89 @@ namespace Data_Structures
         }
         public void InsertBefore(int val, int newVal)
         {
-            Node current = head;
+           
             Node newNode = new Node(newVal);
-            Node valNode = new Node(val);
+
+
+            if (head == null)
+            {
+                throw new ArgumentException(" Value not found");
+            }
+
+           else if (head.Value == val)
+            {
+                
+                newNode.Next =head;
+                head = newNode;
+               
+            }
 
             
+            else
+            {
+                Node current = head;
 
-            while (current.Next != null )
+                while (current.Next != null)
                 {
-                if (current == valNode)
-                {
-                    newNode.Next = current;
-                    break;
-                }
-               
-                else if (current.Next == valNode)
+
+                    if (current.Next.Value == val)
                     {
-                    
-                    newNode.Next =current.Next ;
-                    current.Next = newNode;
-                    break;
+
+                        newNode.Next = current.Next;
+                        current.Next = newNode;
+                        return;
                     }
-                else
-                {
-                    current = current.Next;
+                    else
+                    {
+                        current = current.Next;
+                    }
                 }
-                         
+
+            }
+        
+                     
                     
 
                 }
-            }
+            
 
         public void InsertAfter(int val, int newVal)
         {
-            Node current = head;
+           
             Node newNode = new Node(newVal);
-            Node valNode = new Node(val);
-
-
-
-            while (current.Next != null)
+         
+            if (head == null)
             {
-                if (current == valNode)
+                throw new ArgumentException(" Value not found");
+            }
+
+           else if (head.Value == val)
+            {
+                newNode.Next = head.Next;
+                head.Next = newNode;
+                
+            }
+
+            else {
+
+                Node current = head;
+
+                while (current.Next != null)
                 {
-                    newNode.Next = current.Next;
-                    current.Next = newNode;
-                    break;
+
+                if (current.Next.Value ==val )
+                    {
+                      
+                        newNode.Next = current.Next.Next;
+                        current.Next.Next = newNode;
+                        break;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+
                 }
-
-                else if (current.Next == valNode)
-                {
-
-                    newNode.Next = current.Next.Next;
-                    current.Next.Next = newNode;
-                    break;
-                }
-                else
-                {
-                    current = current.Next;
-                }
-
-
 
             }
         }
