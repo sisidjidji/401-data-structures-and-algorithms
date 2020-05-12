@@ -1,4 +1,5 @@
 using Data_Structures;
+using System;
 using Xunit;
 
 namespace Data_Structures_testing
@@ -187,6 +188,40 @@ namespace Data_Structures_testing
 
             Assert.Equal("{5} -> {3} -> {4} -> {2} -> {1} -> NULL", list.toString());
 
+        }
+
+        [Fact]
+        public void k_greater_than_length()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            
+
+            Assert.Throws<IndexOutOfRangeException>(()=>list.KthFromEnd(9));
+
+        }
+
+        [Fact]
+        public void k_less_then_length()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            //act
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //assert
+
+            Assert.Equal(5, list.KthFromEnd(3));
+
+      
         }
     }
     }

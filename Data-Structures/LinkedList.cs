@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace Data_Structures
 {
@@ -84,7 +85,7 @@ namespace Data_Structures
         }
         public void InsertBefore(int val, int newVal)
         {
-           
+
             Node newNode = new Node(newVal);
 
 
@@ -93,15 +94,15 @@ namespace Data_Structures
                 throw new ArgumentException(" Value not found");
             }
 
-           else if (head.Value == val)
+            else if (head.Value == val)
             {
-                
-                newNode.Next =head;
+
+                newNode.Next = head;
                 head = newNode;
-               
+
             }
 
-            
+
             else
             {
                 Node current = head;
@@ -123,11 +124,52 @@ namespace Data_Structures
                 }
 
             }
-        
-                     
-                    
+        }
 
-                }
+        public int KthFromEnd(int k)
+        {
+
+            int length = 0;
+
+            if (head == null)
+            {
+                throw new ArgumentException(" Value not found");
+            }
+            Node current = head;
+            while (current != null)
+            {
+                current = current.Next;
+                length++;
+            }
+
+            int position = length -k-1;
+
+            if (length < k)
+            {
+                throw new IndexOutOfRangeException("error");
+
+            }
+            else if (length == k)
+            {
+                return head.Value;
+            }
+
+
+            current = head;
+           int count = 0;
+
+            while (current!= null && count<position)
+            {
+
+                    current = current.Next;
+
+                count++;
+  
+            }
+            return current.Value;
+        }
+           
+        
             
 
         public void InsertAfter(int val, int newVal)
