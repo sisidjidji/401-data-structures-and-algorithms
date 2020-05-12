@@ -80,6 +80,73 @@ namespace Data_Structures
             }
 
         }
+        public void InsertBefore(int val, int newVal)
+        {
+            Node current = head;
+            Node newNode = new Node(newVal);
+            Node valNode = new Node(val);
+
+            
+
+            while (current.Next != null )
+                {
+                if (current == valNode)
+                {
+                    newNode.Next = current;
+                    break;
+                }
+               
+                else if (current.Next == valNode)
+                    {
+                    
+                    newNode.Next =current.Next ;
+                    current.Next = newNode;
+                    break;
+                    }
+                else
+                {
+                    current = current.Next;
+                }
+                         
+                    
+
+                }
+            }
+
+        public void InsertAfter(int val, int newVal)
+        {
+            Node current = head;
+            Node newNode = new Node(newVal);
+            Node valNode = new Node(val);
+
+
+
+            while (current.Next != null)
+            {
+                if (current == valNode)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    break;
+                }
+
+                else if (current.Next == valNode)
+                {
+
+                    newNode.Next = current.Next.Next;
+                    current.Next.Next = newNode;
+                    break;
+                }
+                else
+                {
+                    current = current.Next;
+                }
+
+
+
+            }
+        }
+
         public class Node
         {
             public Node(int value)
