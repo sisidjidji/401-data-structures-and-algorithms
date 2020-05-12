@@ -86,18 +86,28 @@ namespace Data_Structures
             Node newNode = new Node(newVal);
             Node valNode = new Node(val);
 
+            
+
             while (current.Next != null )
                 {
-
-                    if (current.Next == valNode)
+                if (current == valNode)
+                {
+                    newNode.Next = current;
+                    break;
+                }
+               
+                else if (current.Next == valNode)
                     {
                     
                     newNode.Next =current.Next ;
                     current.Next = newNode;
                     break;
                     }
-                   
-                         current=current.Next;
+                else
+                {
+                    current = current.Next;
+                }
+                         
                     
 
                 }

@@ -122,7 +122,7 @@ namespace Data_Structures_testing
         }
 
         [Fact]
-        public void can_insert_middel()
+        public void can_insert_before_middel()
         {
             // arrange
             LinkedList list = new LinkedList();
@@ -135,6 +135,23 @@ namespace Data_Structures_testing
             list.InsertBefore(2,3);
 
             Assert.Equal("{5} -> {4} -> {3} -> {2} -> {1} -> NULL", list.toString());
+
+        }
+
+        [Fact]
+        public void can_insert_before_first()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            list.InsertBefore(5, 3);
+
+            Assert.Equal("{3} -> {5} -> {4} -> {2} -> {1} -> NULL", list.toString());
 
         }
 
