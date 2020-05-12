@@ -99,11 +99,44 @@ namespace Data_Structures_testing
 
             list.Append(5);
             // assert
-            Assert.Equal("{4} -> {2} -> {1} -> {5} -> NULL",list.toString());
+            Assert.Equal("{4} -> {2} -> {1} -> {5} -> NULL", list.toString());
         }
 
         [Fact]
-     
-    }  
-    
+        public void can_append_multiple()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            //act
+
+
+            list.Append(5);
+            list.Append(7);
+            list.Append(9);
+
+            Assert.Equal("{4} -> {2} -> {1} -> {5} -> {7} -> {9} -> NULL", list.toString());
+
+        }
+
+        [Fact]
+        public void can_insert_middel()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            list.InsertBefore(2,3);
+
+            Assert.Equal("{5} -> {4} -> {3} -> {2} -> {1} -> NULL", list.toString());
+
+        }
+
+    }
     }
