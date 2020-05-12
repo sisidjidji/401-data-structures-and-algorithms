@@ -42,7 +42,7 @@ Define a method called toString (or __str__ in Python) which takes in no argumen
 ## Approach & Efficiency
 the big O is o(n)
 
-## Challenge3
+## Challenge6
 Write the following methods for the Linked List class:
 
 .append(value) which adds a new node with the given value to the end of the list
@@ -51,4 +51,11 @@ Write the following methods for the Linked List class:
 
 ## Solution
 
-![code challenge3](/assets/Image from iOS.jpg)
+![code challenge6](/assets/Image from iOS.jpg)
+
+# Challenge7
+Write the following methods for the Linked List class:
+Write a method for the Linked List class which takes a number, k, as a parameter.Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+## Solution
+
+![code challenge7](/assets/LinkedListKSearch.png)
