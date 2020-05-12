@@ -1,4 +1,5 @@
 using Data_Structures;
+using System;
 using Xunit;
 
 namespace Data_Structures_testing
@@ -187,6 +188,83 @@ namespace Data_Structures_testing
 
             Assert.Equal("{5} -> {3} -> {4} -> {2} -> {1} -> NULL", list.toString());
 
+        }
+
+        [Fact]
+        public void k_greater_than_length()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            
+
+            Assert.Throws<IndexOutOfRangeException>(()=>list.KthFromEnd(9));
+
+        }
+        [Fact]
+        public void k_less_than_zero()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //act
+
+            Assert.Throws<IndexOutOfRangeException>(() => list.KthFromEnd(-1));
+        }
+
+        [Fact]
+        public void k_in_the_middle()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(7);
+            list.Insert(8);
+            //act
+
+            Assert.Equal(5, list.KthFromEnd(3));
+        }
+
+
+        [Fact]
+        public void list_size_one()
+
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+
+            //act
+
+            Assert.Equal(1, list.KthFromEnd(0));
+        }
+
+        [Fact]
+        public void k_less_then_length()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            //act
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            list.Insert(5);
+            //assert
+
+            Assert.Equal(5, list.KthFromEnd(3));
+
+      
         }
     }
     }
