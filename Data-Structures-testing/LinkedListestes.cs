@@ -62,7 +62,7 @@ namespace Data_Structures_testing
         public void will_return_true_when_finding_value()
         {
             // arrange
-            LinkedList list = new LinkedList ();
+            LinkedList list = new LinkedList();
 
             //act
             list.Insert(3);
@@ -78,15 +78,32 @@ namespace Data_Structures_testing
             LinkedList list = new LinkedList();
 
             //act
-           
+
 
             list.Insert(5);
             list.Insert(3);
             // assert
             Assert.False(list.Include(2));
         }
+
+        [Fact]
+        public void can_append()
+        {
+            // arrange
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(4);
+            //act
+
+
+            list.Append(5);
+            // assert
+            Assert.Equal("{4} -> {2} -> {1} -> {5} -> NULL",list.toString());
+        }
+
         [Fact]
      
-        
-    }
+    }  
+    
     }
