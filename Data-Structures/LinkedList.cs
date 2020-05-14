@@ -10,6 +10,8 @@ namespace Data_Structures
 
         private Node head;
 
+        public Node Head => head;
+
         public void Insert(int numb)
         {
             Node newNode = new Node(numb);
