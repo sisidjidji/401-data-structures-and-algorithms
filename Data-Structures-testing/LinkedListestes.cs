@@ -251,7 +251,7 @@ namespace Data_Structures_testing
         }
 
         [Fact]
-        public void k_less_then_length()
+        public void k_equl_length()
         {
             // arrange
             LinkedList list = new LinkedList();
