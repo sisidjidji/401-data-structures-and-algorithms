@@ -38,14 +38,15 @@ namespace Challenges
                 current1 = curent1next;
                 current2 = current2next;
              
-                if (curent1next == null)
+                if (current1 == null)
                 {
-                    current1.Next = current2next.Next;
+                    current1.Next = current2.Next;
+                    current2 = current2.Next;
                 }
 
-                else if (current2next == null)
+                else if (current2 == null)
                 {
-                    current2.Next = curent1next.Next;
+                    current1.Next = current1.Next;
                 }
 
                
