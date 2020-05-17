@@ -1,6 +1,7 @@
 # 401-data-structures-and-algorithms.
 # Reverse an Array
 
+![.NET Core](https://github.com/sisidjidji/401-data-structures-and-algorithms./workflows/.NET%20Core/badge.svg)
 
 ## Challenge1
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
@@ -22,7 +23,7 @@ Write a function called insertShiftArray which takes in an array and the value t
 ![code challenge2](/assets/challenge2.png)
 
 ## Challenge3
-Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the arrayâ€™s element that is equal to the search key, or -1 if the element does not exist.
 
 ## Solution
 
@@ -35,7 +36,7 @@ A Linked List is a sequence of Nodes that are connected/linked to each other. Th
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
-Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Nodeâ€™s value somewhere within the list.
 Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
 
@@ -55,7 +56,7 @@ Write the following methods for the Linked List class:
 
 # Challenge7
 Write the following methods for the Linked List class:
-Write a method for the Linked List class which takes a number, k, as a parameter.Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+Write a method for the Linked List class which takes a number, k, as a parameter.Return the nodeâ€™s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 ## Solution
 
 ![code challenge7](/assets/LinkedListKSearch.png)
