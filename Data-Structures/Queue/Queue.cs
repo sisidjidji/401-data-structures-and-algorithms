@@ -32,6 +32,7 @@ namespace Data_Structures.Queue
             {
                 throw new InvalidOperationException();
             }
+
             Node <T> dequeue = front;
             front=front.Next;
             dequeue.Next = null;

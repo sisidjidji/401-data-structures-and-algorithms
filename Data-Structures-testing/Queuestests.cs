@@ -74,15 +74,10 @@ namespace Data_Structures_testing
             //Act
             queue.EnQueus(2);
             queue.EnQueus(5);
-            queue.EnQueus(1);
-            queue.EnQueus(7);
-
+       
             queue.DeQueus();
             queue.DeQueus();
-            queue.DeQueus();
-            queue.DeQueus();
-           
-
+            
             //Assert
             Assert.True(queue.IsEmpty());
         }
