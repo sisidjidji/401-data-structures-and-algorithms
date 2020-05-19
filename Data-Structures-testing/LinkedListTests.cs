@@ -1,4 +1,4 @@
-using Data_Structures;
+﻿using Data_Structures;
 using System;
 using Xunit;
 
@@ -133,7 +133,7 @@ namespace Data_Structures_testing
             list.Insert(5);
             //act
 
-            list.InsertBefore(2,3);
+            list.InsertBefore(2, 3);
 
             Assert.Equal("{5} -> {4} -> {3} -> {2} -> {1} -> NULL", list.toString());
 
@@ -164,7 +164,7 @@ namespace Data_Structures_testing
             list.Insert(1);
             list.Insert(2);
             list.Insert(4);
-         
+
             //act
 
             list.InsertAfter(2, 3);
@@ -201,9 +201,9 @@ namespace Data_Structures_testing
             list.Insert(5);
             //act
 
-            
 
-            Assert.Throws<IndexOutOfRangeException>(()=>list.KthFromEnd(9));
+
+            Assert.Throws<IndexOutOfRangeException>(() => list.KthFromEnd(9));
 
         }
         [Fact]
@@ -264,7 +264,7 @@ namespace Data_Structures_testing
 
             Assert.Equal(5, list.KthFromEnd(3));
 
-      
+
         }
     }
-    }
+}

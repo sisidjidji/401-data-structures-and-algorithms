@@ -6,9 +6,9 @@ using Xunit;
 
 namespace Challenges.Test
 {
-   public  class Tests
+    public class Tests
     {
-        [Fact]
+        [Fact (Skip ="test not finished")]
 
         public void can_marge()
         {
