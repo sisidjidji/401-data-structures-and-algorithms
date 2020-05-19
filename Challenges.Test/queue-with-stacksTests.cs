@@ -39,5 +39,27 @@ namespace Data_Structures_testing
 
         }
 
+        [Fact]
+
+        public void can_dequeue_toEmpty_value()
+        {
+            PseudoQueue<int> queue = new PseudoQueue<int>();
+            queue.EnQueue(1);
+            queue.EnQueue(5);
+            queue.EnQueue(7);
+            queue.EnQueue(3);
+            queue.EnQueue(2);
+
+            queue.DeQueue();
+            queue.DeQueue();
+            queue.DeQueue();
+            queue.DeQueue();
+            queue.DeQueue();
+
+
+            Assert.True(queue.IsEmpty());
+
+        }
+
     }
 }
