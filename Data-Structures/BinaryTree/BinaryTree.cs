@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_Structures.tree
 {
-     public class BinaryTree<T>
+     public class BinaryTree<T> 
     {
         public Node<T> Root ;
      
@@ -94,8 +94,9 @@ namespace Data_Structures.tree
             yield return Root.Value;
 
         }
-
+       
     }
+    
     public class Node<T>
     {
         public Node( T value)
