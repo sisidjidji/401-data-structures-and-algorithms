@@ -12,9 +12,7 @@ namespace Data_Structures.queue_with_stacks
 
         public void EnQueue(T value)
         {
-           
-                stack1.Push(value);
-
+                 stack1.Push(value);
         }
 
         public T DeQueue()
