@@ -4,26 +4,26 @@ using System.Text;
 
 namespace Data_Structures.tree
 {
-     public class BinaryTree<T> 
+    public class BinaryTree<T>
     {
-        public Node<T> Root ;
-     
+        public Node<T> Root;
 
-        public IEnumerable<T> PreOrder(Node <T>Root)
+
+        public IEnumerable<T> PreOrder(Node<T> Root)
         {
             yield return Root.Value;
 
-           if (Root == null)
+            if (Root == null)
             {
                 throw new IndexOutOfRangeException();
             }
-           if(Root.Left!=null)
+            if (Root.Left != null)
             {
                 foreach (T node in PreOrder(Root.Left))
                 {
                     yield return node;
                 }
-               
+
 
             }
             if (Root.Right != null)
@@ -33,13 +33,13 @@ namespace Data_Structures.tree
                     yield return node;
                 }
             }
-           
-           
+
+
         }
 
         public IEnumerable<T> InOrder(Node<T> Root)
         {
-            
+
 
             if (Root == null)
             {
@@ -49,9 +49,9 @@ namespace Data_Structures.tree
             if (Root.Left != null)
             {
                 foreach (T node in InOrder(Root.Left))
-                    {
+                {
                     yield return node;
-                    }
+                }
             }
 
             yield return Root.Value;
@@ -67,7 +67,7 @@ namespace Data_Structures.tree
 
         }
 
-        public IEnumerable<T> PostOrder (Node<T> Root)
+        public IEnumerable<T> PostOrder(Node<T> Root)
         {
             if (Root == null)
             {
@@ -82,7 +82,7 @@ namespace Data_Structures.tree
                 }
             }
 
-            
+
             if (Root.Right != null)
             {
                 foreach (T node in PostOrder(Root.Right))
@@ -93,8 +93,41 @@ namespace Data_Structures.tree
 
             yield return Root.Value;
 
+
+
         }
-       
+
+
+        public IEnumerable<T> BreadthFirst()
+        {
+            Queue<Node<T>> breadth = new Queue<Node<T>>();
+
+            breadth.Enqueue(this.Root);
+
+            while (breadth.Count > 0)
+            {
+                var current = breadth.Dequeue();
+
+                yield return current.Value;
+
+
+
+                if (current.Left != null)
+                {
+
+                    breadth.Enqueue(current.Left);
+                }
+
+                if (current.Right != null)
+                {
+                    breadth.Enqueue(current.Right);
+
+                }
+
+
+            }
+
+        }
     }
     
     public class Node<T>
