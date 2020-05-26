@@ -14,6 +14,7 @@ namespace Data_Structures.BinaryTree
             if (Root == null)
             {
                 Root = newNode;
+                return;
             }
 
             if (value.CompareTo(Root.Value) < 0)
