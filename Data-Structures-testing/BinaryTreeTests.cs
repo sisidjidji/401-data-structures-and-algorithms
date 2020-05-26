@@ -62,6 +62,7 @@ namespace Data_Structures_testing
             node1.Left = node2;
             node1.Right = node3;
             node2.Left = node4;
+
             node2.Right = node5;
 
             //Assert
