@@ -36,6 +36,20 @@ namespace Data_Structures_testing
             Assert.NotNull(tree.Root.Left);
             Assert.NotNull(tree.Root.Right);
         }
+        [Fact]
+        public void check_that_it_contain_value()
+        {
+            //Arrange
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+
+            //act
+            tree.AddNodeToTree(5);
+            tree.AddNodeToTree(1);
+            tree.AddNodeToTree(7);
+
+            Assert.False(tree.Contain(9));
+        }
+
     }
 
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_Structures.BinaryTree
 {
-   public class BinarySearchTree<T> where T : IComparable<T>
+    public class BinarySearchTree<T> where T : IComparable<T>
     {
         public Node<T> Root;
         public void AddNodeToTree(T value)
@@ -38,14 +38,41 @@ namespace Data_Structures.BinaryTree
                     AddNodeToTree(Root.Right.Value);
                 }
             }
-
-
-            }
         }
+
+        public bool Contain(T value)
+        {
+
+            if (value.CompareTo(Root.Value) == 0)
+            {
+                return true;
+            }
+
+            else if (value.CompareTo(Root.Value) < 0)
+            {
+                Root = Root.Left;
+                Contain(Root.Value);
+            }
+            else
+            {
+                Root = Root.Right;
+                Contain(Root.Value);
+            }
+
+
+
+
+            return false;
+
+        }
+
+
+    }   
     
 
+
     public class Node<T>
-    {
+    { 
         public Node(T value)
         {
             Value = value;
