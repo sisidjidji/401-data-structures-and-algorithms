@@ -128,7 +128,34 @@ namespace Data_Structures.tree
             }
 
         }
+
+       
+        public int FindMax(Node<int> node)
+        {
+           if (node == null)
+            {
+                return 0;
+            }
+
+            int tempMaxVal = node.Value;
+            int leftMaxVal = FindMax(node.Left);
+            int rightMaxVal = FindMax(node.Right);
+
+            if (leftMaxVal > tempMaxVal)
+            {
+                tempMaxVal = leftMaxVal;
+            }
+
+            else if (rightMaxVal > tempMaxVal)
+            {
+                tempMaxVal = rightMaxVal;
+            }
+
+            return tempMaxVal;
+        }
     }
+
+
     
     public class Node<T>
     {

@@ -43,3 +43,11 @@ Write a breadth first traversal method which takes a Binary Tree as its unique i
 ## Solution
 
 ![code challenge17](/assets/17.png)
+
+
+# Challenge18
+Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Solution
+
+![code challenge18](/assets/18.png)
