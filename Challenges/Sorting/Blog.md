@@ -19,7 +19,7 @@ We take an unsorted array for our example.
 
 - this diagram show how the sorting works :
 
-![code diagram](/assets/blog.png)
+![code diagram](/assets/blog1.png)
 
 
 ## Algorithm 
