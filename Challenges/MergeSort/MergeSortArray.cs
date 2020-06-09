@@ -7,64 +7,90 @@ namespace Challenges.MergeSort
 {
     public class MergeSortArray
     {
-        public static int [] MergeSort(int [] arr)
+        public static int[] MergeSort(int[] array)
         {
-            int n = arr.Length;
+            int[] left;
+            int[] right;
+            int[] result = new int[array.Length];
+            
+            if (array.Length <= 1)
+                return array;
+          
+            int midPoint = array.Length / 2;
+            left = new int[midPoint];
 
-            if (n > 1)
+            
+            if (array.Length % 2 == 0)
+                right = new int[midPoint];
+           
+            else
+                right = new int[midPoint + 1];
+          
+            for (int i = 0; i < midPoint; i++)
+                left[i] = array[i];
+           
+            int x = 0;
+            
+             for (int i = midPoint; i < array.Length; i++)
             {
-                int mid = n + 1 / 2;
-                int[] left = arr[0..mid];
-                int[] right = arr[mid..n];
-
-
-                MergeSort(left);
-                MergeSort(right);
-
-
-                Merge(left, right, arr);
+                right[x] = array[i];
+                x++;
             }
-
-            return arr;
+            
+            left = MergeSort(left);
+            
+            right = MergeSort(right);
+          
+            result = Merge(left, right);
+            return result;
         }
 
-        public static int [] Merge(int[] L ,int[] R, int[] arr)
+        
+        public static int[] Merge(int[] L, int[] R)
         {
+            int resultLength = R.Length + L.Length;
+            int[] result = new int[resultLength];
+            //
             int i = 0;
             int j = 0;
-            int k = 0;
-
-            while (i < L.Length && j < R.Length)
+            int k =0 ;
+         
+            while (i < L.Length || j < R.Length)
             {
-                if (L[i] <= R[j])
+                
+                if (i < L.Length && j < R.Length)
                 {
-                    arr[k] = L[i];
-                    i = i + 1;
+                    //If item on left array is less than item on right array, add that item to the result array 
+                    if (L[i] <= R[j])
+                    {
+                        result[k] = L[i];
+                        i++;
+                        k++;
+                    }
+                    
+                    else
+                    {
+                        result[k] = R[j];
+                        j++;
+                        k++;
+                    }
                 }
-
-                else
+                
+                else if (i < L.Length)
                 {
-                    arr[k] = R[j];
-                    j = j + 1;
-                    k = k + 1;
+                    result[k] = L[i];
+                    i++;
+                    k++;
                 }
-
-            } 
-
-            if (i == L.Length)
-            {
-                arr[k] = L[i];
-                i=i+1;
-                k=k+1;
+                
+                else if (j < R.Length)
+                {
+                    result[k] = R[j];
+                    j++;
+                    k++;
+                }
             }
-            else if(i == R.Length)
-            {
-                arr[k] = R[j];
-                j=j+1;
-                k=k+1;
-            }
-
-            return arr;
+            return result;
         }
     }
 }
