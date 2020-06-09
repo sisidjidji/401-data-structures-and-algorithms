@@ -34,8 +34,9 @@ namespace Challenges.MergeSort
             int j = 0;
             int k = 0;
 
-        while (i < L.Length && j < R.Length)
-        if (L[i] <= R[j])
+            while (i < L.Length && j < R.Length)
+            {
+                if (L[i] <= R[j])
                 {
                     arr[k] = L[i];
                     i = i + 1;
@@ -45,21 +46,22 @@ namespace Challenges.MergeSort
                 {
                     arr[k] = R[j];
                     j = j + 1;
+                    k = k + 1;
                 }
 
-            k = k + 1;
+            } 
 
             if (i == L.Length)
             {
                 arr[k] = L[i];
-                i++;
-                k++;
+                i=i+1;
+                k=k+1;
             }
             else if(i == R.Length)
             {
                 arr[k] = R[j];
-                j++;
-                k++;
+                j=j+1;
+                k=k+1;
             }
 
             return arr;
