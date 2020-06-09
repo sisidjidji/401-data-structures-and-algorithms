@@ -19,9 +19,9 @@ We take an unsorted array for our example.
 
 - this diagram show how the sorting works :
 
-![code diagram](/assets/blog1.png)
+![code diagram](/assets/blog.png)
 
 
 ## Algorithm 
 
-![code challenge19](/assets/19.png)
+![code challenge19](/assets/blog1.png)
