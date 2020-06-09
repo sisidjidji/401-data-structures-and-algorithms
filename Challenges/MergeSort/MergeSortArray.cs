@@ -16,22 +16,22 @@ namespace Challenges.MergeSort
             if (array.Length <= 1)
                 return array;
           
-            int midPoint = array.Length / 2;
-            left = new int[midPoint];
+            int mid = array.Length / 2;
+            left = new int[mid];
 
             
             if (array.Length % 2 == 0)
-                right = new int[midPoint];
+                right = new int[mid];
            
             else
-                right = new int[midPoint + 1];
+                right = new int[mid + 1];
           
-            for (int i = 0; i < midPoint; i++)
+            for (int i = 0; i < mid; i++)
                 left[i] = array[i];
            
             int x = 0;
             
-             for (int i = midPoint; i < array.Length; i++)
+             for (int i = mid; i < array.Length; i++)
             {
                 right[x] = array[i];
                 x++;
