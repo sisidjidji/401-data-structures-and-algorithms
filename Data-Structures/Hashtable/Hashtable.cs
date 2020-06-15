@@ -8,7 +8,7 @@ namespace Data_Structures.Hashtable
 {
    public class Hashtable <T>
     {
-        private const int bucketCount = 6;
+        private const int bucketCount = 3;
 
         private Node [] Bucket = new Node [bucketCount];
         public int GetHash(string key)

@@ -44,5 +44,19 @@ namespace Data_Structures_testing
             Assert.Equal(125, hash.Find("hi"));
 
         }
+
+        [Fact]
+
+        public void can_return_null_if_empty()
+        {
+            Hashtable<int> hash = new Hashtable<int>();
+
+            hash.Add("hi", 125);
+            hash.Add("hello", 152);
+            hash.Add("moi", 12);
+
+            Assert.Throws<KeyNotFoundException>(() => hash.Find("h"));
+         
+        }
     }
 }
