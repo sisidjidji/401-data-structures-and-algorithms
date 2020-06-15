@@ -43,6 +43,6 @@ namespace Data_Structures_testing
 
             Assert.Equal(125, hash.Find("hi"));
 
-        //}
+        }
     }
 }
