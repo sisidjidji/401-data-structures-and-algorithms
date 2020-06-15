@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Data_Structures.Hashtable
 {
-   public class Hashtable
+   public class Hashtable <T>
     {
         public int GetHash(string key)
         {
@@ -20,7 +21,25 @@ namespace Data_Structures.Hashtable
         }
 
 
+
+        public class Node
+        {
+            public string key { get; set; }
+            public T Value { get; set; }
+
+            public Node Next { get; set; }
+
+            public Node(T value)
+            {
+                Next = Next;
+                Value = value;
+                key = key;
+            }
+        }
+
     }
+
+    
 
 
 }
