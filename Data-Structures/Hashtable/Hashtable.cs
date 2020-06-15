@@ -37,11 +37,11 @@ namespace Data_Structures.Hashtable
             }
 
         else
-            {
+            
                 Bucket[index].Next = node;
 
                
-            }
+            
         }
 
         public bool Contain (string key )
@@ -50,22 +50,25 @@ namespace Data_Structures.Hashtable
 
             if (Bucket[index] == null){
 
-                return true;
+                return false;
             }
 
             else 
-                return false;
+                return true;
         }
 
         public T Find (string key)
         {
             int index = GetHash(key) % 1024;
 
-            if (Bucket[index].key == key)
+         
+                 if (Bucket[index].key == key)
+                {
+                    return Bucket[index].Value;
+                }
+                
 
-                return Bucket[index].Value;
-
-            else
+          
                 throw new KeyNotFoundException();
         }
 
