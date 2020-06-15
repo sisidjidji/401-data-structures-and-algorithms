@@ -8,7 +8,9 @@ namespace Data_Structures.Hashtable
 {
    public class Hashtable <T>
     {
-        public Node [] Bucket => new Node [1024];
+        private const int bucketCount = 6;
+
+        private Node [] Bucket = new Node [bucketCount];
         public int GetHash(string key)
         {
             int hash = 0;
@@ -27,7 +29,7 @@ namespace Data_Structures.Hashtable
             Node node = new Node(value);
             node.key = key;
                 
-           int index =  GetHash(key) % 1024;
+           int index =  GetHash(key) % bucketCount;
 
         if (Bucket[index] == null)
             {
@@ -39,14 +41,12 @@ namespace Data_Structures.Hashtable
         else
             
                 Bucket[index].Next = node;
-
-               
-            
+      
         }
 
         public bool Contain (string key )
         {
-            int index = GetHash(key) % 1024;
+            int index = GetHash(key) % bucketCount;
 
             if (Bucket[index] == null){
 
@@ -59,7 +59,7 @@ namespace Data_Structures.Hashtable
 
         public T Find (string key)
         {
-            int index = GetHash(key) % 1024;
+            int index = GetHash(key) % bucketCount;
 
          
                  if (Bucket[index].key == key)

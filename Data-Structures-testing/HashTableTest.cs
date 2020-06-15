@@ -33,15 +33,15 @@ namespace Data_Structures_testing
 
         }
 
-       // [Fact]
+        [Fact]
 
-       // public void can_find__key()
-        //{
-           // Hashtable<int> hash = new Hashtable<int>();
+        public void can_find__key()
+        {
+            Hashtable<int> hash = new Hashtable<int>();
 
-          //  hash.Add("hi", 125);
+            hash.Add("hi", 125);
 
-           // Assert.Equal(125, hash.Find("hi"));
+            Assert.Equal(125, hash.Find("hi"));
 
         //}
     }
