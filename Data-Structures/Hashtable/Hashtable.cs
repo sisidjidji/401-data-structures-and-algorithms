@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_Structures.Hashtable
 {
-    class Hashtable
+   public class Hashtable
     {
         public int GetHash(string key)
         {
@@ -18,5 +18,9 @@ namespace Data_Structures.Hashtable
             int index = hash * 599;
             return index;
         }
+
+
     }
+
+
 }
