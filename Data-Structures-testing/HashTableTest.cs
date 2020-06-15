@@ -12,7 +12,7 @@ namespace Data_Structures_testing
         public void Can_Hash()
         {
             //Arrange
-            Hashtable hash = new Hashtable();
+            Hashtable<int> hash = new Hashtable<int>();
 
             //act
             int result = hash.GetHash("hi");
@@ -21,5 +21,26 @@ namespace Data_Structures_testing
             Assert.Equal(125191, result);
         }
 
+        [Fact]
+        public void can_Add_key()
+        {
+            Hashtable<int> hash = new Hashtable<int>();
+
+            
+           hash.Add("hi",125);
+
+           Assert.True(hash.Contain("hi"));
+
+        }
+
+        [Fact]
+
+        public void can_find__key()
+        {
+            Hashtable<int> hash = new Hashtable<int>();
+            hash.Add("hi", 125);
+
+            Assert.Equal(125, hash.Find("hi"));
+        }
     }
 }
