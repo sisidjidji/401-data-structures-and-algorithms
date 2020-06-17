@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data_Structures.tree
+namespace Data_Structures.BinaryTree
 {
-    public class BinarySearchTree<T>
+    public class BinaryTree<T>
     {
         public Node<T> Root;
 

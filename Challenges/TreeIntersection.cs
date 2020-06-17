@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class TreeIntersection 
     {
       
-        public static List<int> Tree_intersection(Data_Structures.tree.BinarySearchTree <int> tree1, Data_Structures.tree.BinarySearchTree<int> tree2)
+        public static List<int> Tree_intersection(BinaryTree <int> tree1, Data_Structures.BinaryTree.BinaryTree<int> tree2)
         {
             Hashtable hash = new Hashtable(20) ;
             List<int>result = new List<int> ();
@@ -39,4 +39,4 @@ public class TreeIntersection
     
 
 
-}
+
