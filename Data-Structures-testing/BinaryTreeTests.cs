@@ -10,7 +10,7 @@ namespace Data_Structures_testing
         public void can_PreOrder_Tree()
         {
             //Arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             Node<int> node1 = new Node<int>(5);
             Node<int> node2 = new Node<int>(10);
             Node<int> node3 = new Node<int>(7);
@@ -29,7 +29,7 @@ namespace Data_Structures_testing
         public void can_InOrder_Tree()
         {
             //Arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             Node<int> node1 = new Node<int>(5);
             Node<int> node2 = new Node<int>(10);
             Node<int> node3 = new Node<int>(7);
@@ -51,7 +51,7 @@ namespace Data_Structures_testing
         public void can_PostOrder_Tree()
         {
             //Arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             Node<int> node1 = new Node<int>(5);
             Node<int> node2 = new Node<int>(10);
             Node<int> node3 = new Node<int>(7);
@@ -72,7 +72,7 @@ namespace Data_Structures_testing
         [Fact]
         public void breadth_first_test()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             Node<int> node1 = new Node<int>(5);
             Node<int> node2 = new Node<int>(10);
             Node<int> node3 = new Node<int>(7);

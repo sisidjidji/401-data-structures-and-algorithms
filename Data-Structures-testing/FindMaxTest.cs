@@ -13,7 +13,7 @@ namespace Data_Structures_testing
         public void can_find_Max_Val_on_empty()
         {
             //arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
             
             // assert
@@ -26,7 +26,7 @@ namespace Data_Structures_testing
         public void can_find_Max_Val_on_single_node()
         {
             //arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
             Node<int> node1 = new Node<int>(5);
             //act
@@ -41,7 +41,7 @@ namespace Data_Structures_testing
         public void can_find_Max_Val_on_tree()
         {
             //arrange
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
             Node<int> node1 = new Node<int>(5);
             Node<int> node2 = new Node<int>(10);
