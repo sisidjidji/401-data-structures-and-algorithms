@@ -4,27 +4,35 @@ using System.Text;
 
 namespace Challenges
 {
-    public class LeftJoinTable
+    public static class LeftJoinTable
     {
-        public static list<string[]> leftjoin(dictionary<string, string> hash1, dictionary<string, string> hash2)
+        public static List<string[]> Leftjoin(Dictionary<string, string> hash1, Dictionary<string, string> hash2)
         {
 
-            list<string[]> result = new list<string[]>();
+            List<string[]> result = new List<string[]>();
 
-            foreach (string key in hash1.keys)
+            foreach (string key in hash1.Keys)
             {
-                result.add(new string[] { key, hash1[key], null });
+                result.Add( new string []{ key, hash1[key], null });
             }
 
-            foreach (string key in hash.keys)
+            foreach (string key in hash1.Keys)
             {
-                if (hash1.containskey(key))
+                if (hash2.ContainsKey(key))
                 {
-                    
+                    foreach(string[] arr in result)
+                    {
+                       if( arr[0] == key)
+                        {
+                            arr[2] = hash2[key];
+                        }
+                        
+                    }
                  }
              }
-            }
             return result;
+            }
+            
         }
     }
-}
+
