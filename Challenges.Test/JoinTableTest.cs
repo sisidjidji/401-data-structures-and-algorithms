@@ -24,8 +24,8 @@ namespace Challenges.Test
             List<string[]> result = LeftJoinTable.Leftjoin(hash1, hash2);
 
             string[] expected1 = new string[] { "hi", "hello", null };
-            string[] expected2 = new string[] { "green", "blue" };
-            string[] expected3 = new string[] { "pink,", "purple" };
+            string[] expected2 = new string[] { "green", "blue",null };
+            string[] expected3 = new string[] { "pink,", "purple",null };
 
             Assert.Contains(expected1, result);
             Assert.Contains(expected2, result);
