@@ -64,14 +64,14 @@ namespace Challenges.Test
             Dictionary<string, string> hash2 = new Dictionary<string, string>();
 
             hash1.Add("hi", "hello");
-            hash1.Add("green", "blue");
+            hash1.Add("green", "dark green");
             hash1.Add("pink,", "purple");
 
 
             List<string[]> result = LeftJoinTable.Leftjoin(hash1, hash2);
 
             string[] expected1 = new string[] { "hi", "hello", null };
-            string[] expected2 = new string[] { "green", "blue", null };
+            string[] expected2 = new string[] { "green", "dark green", null };
             string[] expected3 = new string[] { "pink,", "purple", null };
 
             Assert.Contains(expected1, result);
