@@ -1,6 +1,7 @@
 ﻿using Xunit;
-using Data_Structures.tree;
 using Microsoft.VisualStudio.TestPlatform.Common.DataCollection;
+using Data_Structures.BinaryTree;
+
 
 namespace Data_Structures_testing
 {

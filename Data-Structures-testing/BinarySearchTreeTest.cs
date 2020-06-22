@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Data_Structures.Binarytree;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-using Data_Structures.BinaryTree;
+
+
 
 namespace Data_Structures_testing
 {
