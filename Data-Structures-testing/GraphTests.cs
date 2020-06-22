@@ -62,9 +62,25 @@ namespace Data_Structures_testing
             graphe.AddNode(2);
 
             Assert.Equal(list, graphe.GetNodes());
-            
+           
+        }
 
+        [Fact]
+        public void can_retreive_neighbors()
+        {
+            
+            Graph<int> graphe = new Graph<int>();
+
+            graphe.AddNode(7);
+            graphe.AddNode(5);
+            graphe.AddNode(6);
+            graphe.AddNode(9);
+            graphe.AddNode(2);
+
+            Assert.Equal(, graphe.GetNodes());
 
         }
+
+
     }
 }
