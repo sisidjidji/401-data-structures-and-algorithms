@@ -86,6 +86,24 @@ namespace Data_Structures_testing
 
         }
 
+        [Fact]
+        public void CorrectNumberOfNodesInAGraph()
+        {
+
+            Graph<int> graphe = new Graph<int>();
+
+            graphe.AddNode(7);
+            graphe.AddNode(5);
+            graphe.AddNode(6);
+            graphe.AddNode(9);
+            graphe.AddNode(2);
+
+            graphe.AddEdge(7, 5);
+            graphe.AddEdge(7, 9);
+
+
+            Assert.Equal(5, graphe.Size());
+        }
 
     }
 }
