@@ -15,8 +15,14 @@ namespace Data_Structures.Graphs
             {
                 Nodes = new Dictionary<T, Dictionary<T, int>>();
             }
-           
-           
 
- }
+            public bool AddNode(T value)
+            {
+                if (Nodes.ContainsKey(value)) return false;
+
+                Nodes.Add(value, new Dictionary<T, int>());
+                return true;
+            }
+
+        }
    
