@@ -9,6 +9,12 @@ namespace Data_Structures_testing
     public class GraphTests
     {
         [Fact]
+        public void can_return_empty_graph()
+        {
+            Graph<int> graphe = new Graph<int>();
+            Assert.Null(graphe.GetNodes());
+        }
+        [Fact]
 
         public void can_add_node_one_node()
         {
