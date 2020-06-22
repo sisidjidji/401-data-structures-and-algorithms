@@ -77,7 +77,12 @@ namespace Data_Structures_testing
             graphe.AddNode(9);
             graphe.AddNode(2);
 
-            Assert.Equal(, graphe.GetNodes());
+            graphe.AddEdge(7, 5);
+            graphe.AddEdge(7, 9);
+        
+
+
+            Assert.Equal(2, graphe.GetNeighbors(7).Count);
 
         }
 
