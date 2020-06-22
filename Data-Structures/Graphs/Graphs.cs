@@ -44,5 +44,11 @@ namespace Data_Structures.Graphs
                 nodeOne.Add(secondNodeValue, weight);
                 return true;
            }
+
+            public List<T> GetNodes()
+            {
+                if (Nodes.Keys.Count < 1) return null;
+                return Nodes.Keys.ToList();
+            }
         }
    
