@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Data_Structures.Graphs
 {
-  
+
     public class Graphs
     {
         public class Graph<T>
@@ -26,9 +26,9 @@ namespace Data_Structures.Graphs
 
             public bool AddEdge(T firstNodeValue, T secondNodeValue, int weight = 1, bool oneWay = false)
             {
-                
+
                 if (!Nodes.ContainsKey(firstNodeValue) || !Nodes.ContainsKey(secondNodeValue)) return false;
-                
+
                 Dictionary<T, int> nodeOne = Nodes[firstNodeValue];
                 Dictionary<T, int> nodeTwo = Nodes[secondNodeValue];
 
@@ -43,12 +43,27 @@ namespace Data_Structures.Graphs
 
                 nodeOne.Add(secondNodeValue, weight);
                 return true;
-           }
+            }
 
             public List<T> GetNodes()
             {
                 if (Nodes.Keys.Count < 1) return null;
                 return Nodes.Keys.ToList();
             }
+
+            public Dictionary<T, int> GetNeighbors(T value)
+            {
+                if (!Nodes.ContainsKey(value)) return null;
+
+                return Nodes[value];
+            }
+
+            public int Size()
+            {
+                return Nodes.Keys.Count;
+            }
+
         }
-   
+
+    }
+}
