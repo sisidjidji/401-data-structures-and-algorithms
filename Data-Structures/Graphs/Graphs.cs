@@ -63,7 +63,53 @@ namespace Data_Structures.Graphs
                 return Nodes.Keys.Count;
             }
 
-        }
 
+
+            public List<Node<T>> BreadthFirst(Node <T>root)
+            {
+                List<Node<T>> node = new List<Node<T>>();
+                Queue<Node<T>> breadth = new Queue<Node<T>>();
+
+                breadth.Enqueue(root);
+
+                while (breadth != null)
+                {
+                    Node<T> front = breadth.Dequeue();
+                    node.Add(front);
+
+                    foreach (Node<T> child in front.Children)
+                    {
+                        if (child.Visited == true)
+                        {
+                            breadth.Enqueue(child);
+                        }
+                    }
+
+                }
+                foreach (Node <T> child in node)
+                {
+                    child.Visited = false;
+                }
+
+                return node;
+
+            }
+
+            public class Node<T>
+            {
+                public int Value { get; set; }
+                public List<Node<T>> Children { get; set; }
+                public bool Visited { get; set; } = false;
+
+                public Node(int value)
+                {
+                    Value = value;
+                    Children = new List<Node<T>>();
+                }
+
+
+            }
+
+        }
     }
 }
