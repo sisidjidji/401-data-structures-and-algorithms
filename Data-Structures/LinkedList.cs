@@ -174,9 +174,24 @@ namespace Data_Structures
             }
             return current.Value;
         }
-           
-        
-            
+
+        public Node Find(int value)
+        {
+            Node current = head;
+            while (current != null)
+            {
+                if (current.Value.Equals(value))
+                {
+                    return current;
+                }
+                else
+                {
+                    current = current.Next;
+                }
+            }
+            return null;
+        }
+
 
         public void InsertAfter(int val, int newVal)
         {

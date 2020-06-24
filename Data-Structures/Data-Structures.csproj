@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    <Compile Remove="queue-with-stacks\**" />
+    <EmbeddedResource Remove="queue-with-stacks\**" />
+    <None Remove="queue-with-stacks\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="queue-with-stacks\" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>
